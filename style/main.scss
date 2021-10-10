@@ -1,0 +1,188 @@
+@import 'base/base';
+body{
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+}
+.box{
+    width: 40vw;
+    height: 80vh;
+    &Head{
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    &Input{
+        height: 70px;
+    }
+    &Login{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 20px;
+        &__input{
+            border-radius: 8px;
+            width: 100%;
+            margin: 10px 0 0 0;
+            height: 60px;
+            border-style: solid;
+            padding: 15px 0;
+            font-size: 20px;
+            &:focus{
+                outline: none;
+                border: 2px aqua solid;
+                box-shadow: 0px 0px 0px 3px rgb(155, 238, 238);
+            }
+            &:focus+.boxLogin__label{
+                transform: translateY(-55px);
+                font-size: 15px;
+                transition: 0.5s;
+            }
+            &:valid+.boxLogin__label{
+                transform: translateY(-55px);
+            }
+        }
+        &__label{
+            color: lightgray;
+            display: block;
+            margin-left: 10px;
+            transform: translateY(-40px);
+        }
+        &__button{
+            height: 40px;
+            border-radius: 8px;
+            background-color: blue;
+            color: white;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            &:hover{
+                cursor: pointer;
+            }
+            &:focus{
+                box-shadow: 0px 0px 0px 3px rgb(164, 164, 238);
+            }
+        }
+        &__image{
+            width: 30px;
+            transform: translate(35vw, -65px);
+        }
+        &__checkbox{
+            width: 18px;
+            height: 18px;
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+        &__link{
+            margin-top: 15px;
+            text-decoration: none;
+            color: blue;
+            &:hover{
+              cursor: pointer;
+              text-decoration: underline;
+            }
+        }
+    }
+    &Error{
+        height: 20px;
+        width: 20vw;
+        background-color: red;
+        color: white;
+        border-radius: 8px;
+        opacity: 0;
+        &__text{
+            font-size: 15px;
+            margin: 3px 5px;
+        }
+    }
+}
+.active:hover{
+    background-color: rgb(5, 5, 170);
+}
+.modalWindow{
+    opacity: 0;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &Box{
+        width: 30vw;
+        height: 70vh;
+        background-color: lightgray;
+        border-radius: 8px;
+        justify-content: space-around;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+}
+.activeModal{
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    background-color: white;
+}
+.signIn{
+    @extend .modalWindow;
+    flex-direction: column;
+    &Head{
+        @extend .boxHead;
+    }
+    &Form{
+        @extend .boxLogin;
+        &__input{
+            @extend .boxLogin__input;
+            
+        }
+        &__label{
+            @extend .boxLogin__label;
+        }
+        &__button{
+            @extend .boxLogin__button;
+            background-color: green;
+            width: 40vw;
+            margin-top: 10px;
+            &:focus{
+                box-shadow: 0px 0px 0px 3px rgb(137, 153, 137);
+            }
+        }
+        &__link{
+            @extend .boxLogin__link;
+        }
+    }
+    &Input{
+        @extend .boxInput;
+        width: 40vw;
+        margin-top: 20px
+    }
+    &Error{
+        @extend .boxError;
+        &__text{
+            padding-top: 3px;
+            @extend .boxError__text;
+        }
+    }
+}
+.userImage{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 50px;
+}
+.userName{
+    @extend .boxHead;
+}
+.userEmail{
+    font-size: 25px;
+    color: grey;
+}
+.userButton{
+    @extend .signInForm__button;
+    margin-top: 50px;
+    width: 20vw;
+}

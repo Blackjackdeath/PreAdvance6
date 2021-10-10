@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+    <div class="box">
+        <h1 class="boxHead">Please sign up</h1>
+        <form action="" class="boxLogin" name="boxLogin">
+            <div class="boxInput">
+                <input type="text" name="first" id="first" class="boxLogin__input" required>
+                <label for="first" class="boxLogin__label">First name</label>
+                <img src="" alt="" class="boxLogin__image">
+            </div>
+            <div class="boxError">
+                <p class="boxError__text"></p>
+            </div>
+            <div class="boxInput">
+                <input type="text" name="last" id="last" class="boxLogin__input" required>
+                <label for="last" class="boxLogin__label">Last name</label>
+                <img src="" alt="" class="boxLogin__image">
+            </div>
+            <div class="boxError">
+                <p class="boxError__text"></p>
+            </div>
+            <div class="boxInput">
+                <input type="text" name="email" id="email" class="boxLogin__input" required>
+                <label for="email" class="boxLogin__label">Email address</label>
+                <img src="" alt="" class="boxLogin__image">
+            </div>
+            <div class="boxError">
+                <p class="boxError__text"></p>
+            </div>
+            <div class="boxInput">
+                <input type="password" name="pasword" id="pasword" class="boxLogin__input" required>
+                <label for="pasword" class="boxLogin__label">Password</label>
+                <img src="" alt="" class="boxLogin__image">
+            </div>
+            <div class="boxError">
+                <p class="boxError__text"></p>
+            </div>
+            <button type="button" class="boxLogin__button">Sign Up</button>
+            <p class="boxLogin__link">Sign in now</p>
+        </form>
+    </div>
+    <div class="signIn">
+        <h1 class="signInHead">Please sign in</h1>
+        <form action="signInForm" name="signInForm">
+            <div class="signInInput">
+                <input type="text" name="emailSignIn" id="emailSignIn" class="signInForm__input" required>
+                <label for="emailSignIn" class="signInForm__label">Email adress</label>
+            </div>
+            <div class="signInInput">
+                <input type="password" name="passwordSignIn" id="passwordSignIn" class="signInForm__input" required>
+                <label for="passwordSignIn" class="signInForm__label">Password</label>
+            </div>
+            <div class="signInError">
+                <p class="signInError__text"></p>
+            </div>
+            <button type="button" class="signInForm__button">Sign In</button>
+            <p class="signInForm__link">Sign up now</p>
+        </form>
+    </div>
+    <div class="modalWindow">
+        <div class="modalWindowBox">
+            <img src="./image/avatar.png" alt="" class="userImage">
+            <p class="userName"></p>
+            <p class="userEmail"></p>
+            <p class="userEmail">Designer & Web Developing</p>
+            <hr style="color: grey; width: 50px;">
+            <button type="button" class="userButton">Sign In</button>
+        </div>
+    </div>
+    
+    <script src="./script/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
